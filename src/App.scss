@@ -1,9 +1,15 @@
 .homepage {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
   padding: 20px 80px;
 }
 body {
   font-family: "Open Sans", sans-serif;
+  padding: 20px 60px;
+}
+.center {
+  font-size: 1.2em;
+  text-align: center;
 }
