@@ -1,6 +1,7 @@
 import React from "react";
 import SHOP_DATA from "./ShopData";
 import Collection from "../../components/CollectionPreview/CollectionPreview";
+import "./shop.scss";
 class Shop extends React.Component {
   constructor() {
     super();

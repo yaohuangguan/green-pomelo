@@ -1,15 +1,21 @@
-.homepage {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 80px;
-}
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Courier New", Courier, monospace;
   padding: 20px 60px;
+  background-color: aliceblue;
 }
 .center {
-  font-size: 1.2em;
+  font-size: 1.5em;
   text-align: center;
+  font-family: "Long Cang", cursive;
+  color: rgba(11, 11, 11, 0.5);
+  margin-right: auto;
+  @media screen and (max-width: 415px) {
+    visibility: hidden;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #444;
+  font-weight: bold;
 }

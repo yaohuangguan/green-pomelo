@@ -16,7 +16,7 @@ class Directory extends React.Component {
         {
           title: " 老詹 Lebron James",
           imageUrl:
-            "https://cms.qz.com/wp-content/uploads/2018/07/LeBron-James.jpg?quality=75&strip=all&w=1600&h=900&crop=1",
+            "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571830207356&di=5a02256c44259b0c3405ae1522963604&imgtype=0&src=http%3A%2F%2Fi2.wp.com%2Foverdope.com%2Fwp-content%2Fuploads%2F2015%2F02%2F20150214072141_71.jpg%3Ffit%3D680%2C440",
           id: 2
         },
         {
