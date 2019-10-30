@@ -1,6 +1,8 @@
 import React from "react";
 import FormInput from "./Form-input";
-import "./signupandsignin.scss";
+import Button from "../Custom-button/Button";
+import { googleSignIn } from "../../firebase/firebase";
+import "./Signin.scss";
 
 class Signin extends React.Component {
   constructor(props) {
@@ -20,13 +22,10 @@ class Signin extends React.Component {
   };
   render() {
     return (
-      <div className='sign-in'>
-        <h2>我已有账户</h2>
-        <p>I already have an account</p>
-        <br />
-        <span>输入邮箱和密码登录</span>
-        <br />
-        <span>Sign in with your email and password</span>
+      <div className='sign-in col-md-4'>
+        <h2 className='h3-responsive font-weight-bold text-center my-4'>
+          Sign in with your email and password
+        </h2>
 
         <form onSubmit={this.handleSubmit}>
           <FormInput
@@ -47,7 +46,12 @@ class Signin extends React.Component {
             id='password'
             required
           />
-          <input type='submit' value='提交' />
+          <div className='btn-group '>
+            <input type='submit' className='btn btn-success mr-4' />
+            <Button onClick={googleSignIn}>
+              <i className='fab fa-google'></i> Sign in with Google
+            </Button>
+          </div>
         </form>
       </div>
     );

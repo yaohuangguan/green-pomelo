@@ -1,27 +1,31 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ReactComponent as Logo } from "../../assets/basketball-jersey.svg";
+import Logo from "../../assets/logo.png";
+import { auth } from "../../firebase/firebase";
+import Dropdown from "./Dropdown";
 import "./header.scss";
 
-const Header = () => {
+const Header = ({ currentUser }) => {
   return (
     <div className='header'>
-      <div className='nav'>
-        <Link to='/' className='logo-container'>
-          <Logo className='logo' />
-        </Link>
-        <div className='center'>
-          <h1 style={{ marginBottom: 0 }}>球衣之王</h1>
-          <p style={{ margin: 0, padding: 0 }}>Jersey Pro</p>
-        </div>
-      </div>
+      <Link to='/' className='logo-container'>
+        <img src={Logo} alt='' className='logo' />
+      </Link>
+
       <div className='options'>
         <Link to='/shop' className='option'>
-          购物 SHOP
+          SHOPPING
         </Link>
         <Link to='/contact' className='option'>
-          联系 CONTACT
+          CONTACT
         </Link>
+        {currentUser ? (
+          <Dropdown classname={"h6-responsive"} currentUser={currentUser} />
+        ) : (
+          <Link className='option' to='/signin'>
+            SIGN IN
+          </Link>
+        )}
       </div>
     </div>
   );
