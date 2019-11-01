@@ -1,34 +1,26 @@
 .header {
   width: 100%;
   display: flex;
-  justify-content: space-around;
-  margin-bottom: 50px;
-
-  .nav {
-    width: 60vw;
-    display: flex;
-    justify-content: space-around;
+  background-color: #21d192;
+  .logo {
+    font-size: 1.2em;
+    align-self: center;
+    padding-left: 20px;
+    color: #333;
+    font-weight: 400;
   }
-  .logo-container {
-    padding: 20px;
-    margin-right: auto;
-    .logo {
-      width: 100%;
-    }
-  }
-
   .options {
-    width: 40%;
+    margin-left: auto;
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
-
-    .option {
-      padding: 20px;
-      font-size: 1.1em;
-      font-weight: 400;
-      cursor: pointer;
-      color: black;
-    }
+  }
+  .option {
+    padding: 20px;
+    font-size: 1.1em;
+    font-weight: 400;
+    cursor: pointer;
+    color: #fff;
+  }
+  .option :hover {
+    color: #333;
   }
 }

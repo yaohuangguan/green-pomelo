@@ -1,6 +1,11 @@
 body {
   background-color: #fff;
+  position: relative;
 }
 * {
   box-sizing: border-box;
+}
+.relative {
+  position: relative;
+  min-height: 100vh;
 }

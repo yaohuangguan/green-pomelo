@@ -7,40 +7,40 @@ class Directory extends React.Component {
     this.state = {
       sections: [
         {
-          title: "科比 Kobe Byrant",
+          title: "UI 设计",
           imageUrl:
-            "https://jamesclear.com/wp-content/uploads/2013/08/Kobe_Bryant_2014.jpg",
+            "https://www.mckinsey.com/~/media/McKinsey/Business%20Functions/Operations/Our%20Insights/The%20expanding%20role%20of%20design%20in%20creating%20an%20end%20to%20end%20customer%20experience/Expanding-role-of-design-1536x1536-400_Standard.ashx",
           id: 1,
-          link: "kobe"
+          link: "ui"
         },
         {
-          title: " 老詹 Lebron James",
+          title: " 灵感",
           imageUrl:
-            "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571830207356&di=5a02256c44259b0c3405ae1522963604&imgtype=0&src=http%3A%2F%2Fi2.wp.com%2Foverdope.com%2Fwp-content%2Fuploads%2F2015%2F02%2F20150214072141_71.jpg%3Ffit%3D680%2C440",
+            "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/fa/e15e80504811e6bcaf7158d37ab7ca/LightBulb.jpg?auto=format%2Ccompress&dpr=2.625",
           id: 2
         },
         {
-          title: " 库里 Stephen Curry",
+          title: " 移动端",
           imageUrl:
-            "https://www.gannett-cdn.com/presto/2018/10/29/USAT/2d9b02f9-c2ee-405e-bb80-1d2bc066388f-2018-10-28_Steph_Curry3.jpg?crop=2090,1176,x1,y137&width=3200&height=1680&fit=bounds",
+            "https://miro.medium.com/max/1600/1*bx_5cRhAW4-zFNi9qfRvsA.gif",
           id: 3
         },
         {
-          title: "卡特 Vince Carter",
+          title: "动画",
           imageUrl:
-            "https://media.gettyimages.com/photos/vince-carter-of-the-toronto-raptors-dunks-the-ball-against-the-denver-picture-id167755410?s=612x612",
+            "https://www.frogdesign.com/wp-content/uploads/2018/11/Amrita-Marino-FrogDesign-TechTrendsHeader-1440x810-1024x576.gif",
           id: 4
         },
         {
-          title: "乔丹 Michael Jordan",
+          title: "产品设计",
           imageUrl:
-            "https://www.guinnessworldrecords.com/Images/Michael-Jordan-main_tcm25-15662.jpg",
+            "https://miro.medium.com/max/3840/1*0gkasyYO8KkChq0YSOmIPA.png",
           id: 5
         },
         {
-          title: "罗斯 Derrick Rose",
+          title: "打印设计",
           imageUrl:
-            "http://thesource.com/wp-content/uploads/2019/04/Derrick_Rose_03.jpg",
+            "http://imgs.mi9.com/uploads/3d/4853/3d-design-wallpaper_1366x768_89686.jpg",
           id: 6
         }
       ]

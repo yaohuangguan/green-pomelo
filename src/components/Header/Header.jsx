@@ -1,29 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/logo.png";
-import { auth } from "../../firebase/firebase";
 import Dropdown from "./Dropdown";
 import "./header.scss";
 
 const Header = ({ currentUser }) => {
   return (
     <div className='header'>
-      <Link to='/' className='logo-container'>
-        <img src={Logo} alt='' className='logo' />
+      <Link to='/' className='logo'>
+        {"绿柚"}
       </Link>
-
       <div className='options'>
         <Link to='/shop' className='option'>
-          SHOPPING
+          设计
         </Link>
         <Link to='/contact' className='option'>
-          CONTACT
+          联系
         </Link>
         {currentUser ? (
-          <Dropdown classname={"h6-responsive"} currentUser={currentUser} />
+          <Dropdown classname={"option"} currentUser={currentUser} />
         ) : (
           <Link className='option' to='/signin'>
-            SIGN IN
+            登录
           </Link>
         )}
       </div>

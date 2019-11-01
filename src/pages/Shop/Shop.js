@@ -13,7 +13,7 @@ class Shop extends React.Component {
   render() {
     const { collections } = this.state;
     return (
-      <div className='shop-page'>
+      <div className='container'>
         {collections.map(({ id, ...otherProps }) => (
           <Collection key={id} {...otherProps}></Collection>
         ))}

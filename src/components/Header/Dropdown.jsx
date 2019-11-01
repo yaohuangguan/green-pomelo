@@ -1,20 +1,26 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { auth } from "../../firebase/firebase";
 import "./Dropdown.scss";
-const Dropdown = ({ currentUser, classname }) => {
+
+const Dropdown = ({ currentUser, classname, history }) => {
+  const signOut = () => {
+    auth.signOut();
+    history.push("/");
+  };
   return (
     <div>
       <li className={`${classname} dropdown`}>
         <span>
-          {"Hi " + currentUser.displayName} <i class='fas fa-caret-down'></i>
+          {"Hi " + currentUser.displayName}{" "}
+          <i className='fas fa-caret-down'></i>
         </span>
 
         <ul className='dropdown-menu'>
           <li>
-            <Link className='dropdown-item' onClick={() => auth.signOut()}>
-              SIGN OUT
-            </Link>
+            <a className='dropdown-item' onClick={signOut}>
+              登出
+            </a>
           </li>
         </ul>
       </li>
@@ -22,4 +28,4 @@ const Dropdown = ({ currentUser, classname }) => {
   );
 };
 
-export default Dropdown;
+export default withRouter(Dropdown);

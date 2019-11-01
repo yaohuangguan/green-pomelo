@@ -24,7 +24,7 @@ class Signin extends React.Component {
     return (
       <div className='sign-in col-md-4'>
         <h2 className='h3-responsive font-weight-bold text-center my-4'>
-          Sign in with your email and password
+          使用账号密码登录
         </h2>
 
         <form onSubmit={this.handleSubmit}>
@@ -47,9 +47,13 @@ class Signin extends React.Component {
             required
           />
           <div className='btn-group '>
-            <input type='submit' className='btn btn-success mr-4' />
+            <input
+              type='submit'
+              className='btn btn-success mr-4'
+              value='登录'
+            />
             <Button onClick={googleSignIn}>
-              <i className='fab fa-google'></i> Sign in with Google
+              <i className='fab fa-google'></i> Google登录
             </Button>
           </div>
         </form>
