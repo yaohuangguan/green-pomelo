@@ -4,9 +4,10 @@ import { Route, Switch } from "react-router-dom";
 import Shop from "./pages/Shop/Shop";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import Signin from "./components/Signup/Signup";
-import { auth } from "./firebase/firebase";
+import Signin from "./components/Signup/Signin";
+import { auth, createUser } from "./firebase/firebase";
 import "./App.scss";
+import Signup from "./components/Signup/Signup";
 
 class App extends React.Component {
   constructor() {
@@ -15,15 +16,22 @@ class App extends React.Component {
       currentUser: null
     };
   }
-  getContext() {
-    return {
-      color: "orange"
-    };
-  }
   unsubscribeFromAuth = null;
   componentDidMount() {
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
-      this.setState({ currentUser: user });
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async user => {
+      if (user) {
+        const userRef = await createUser(user);
+        userRef.onSnapshot(snapshot => {
+          this.setState({
+            currentUser: {
+              id: snapshot.id,
+              ...snapshot.data()
+            }
+          });
+        });
+      } else {
+        this.setState({ currentUser: user });
+      }
     });
   }
   componentWillUnmount() {
@@ -38,6 +46,7 @@ class App extends React.Component {
           <Route exact path='/' component={Homepage} />
           <Route exact path='/shop' component={Shop} />
           <Route exact path='/signin' component={Signin} />
+          <Route exact path='/signup' component={Signup} />
         </Switch>
         <Footer></Footer>
       </div>

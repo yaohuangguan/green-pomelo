@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import { auth } from "../../firebase/firebase";
@@ -9,21 +10,26 @@ const Dropdown = ({ currentUser, classname, history }) => {
     history.push("/");
   };
   return (
-    <div>
-      <li className={`${classname} dropdown`}>
-        <span>
-          {"Hi " + currentUser.displayName}{" "}
-          <i className='fas fa-caret-down'></i>
-        </span>
+    <div class='dropdown'>
+      <button
+        class='btn btn-warning dropdown-toggle mr-4'
+        type='button'
+        id='dropdownMenu1'
+        data-toggle='dropdown'
+        aria-haspopup='true'
+        aria-expanded='false'
+      >
+        {currentUser.displayName}
+      </button>
 
-        <ul className='dropdown-menu'>
-          <li>
-            <a className='dropdown-item' onClick={signOut}>
-              登出
-            </a>
-          </li>
-        </ul>
-      </li>
+      <div class='dropdown-menu dropdown-primary'>
+        <a class='dropdown-item' onClick={signOut}>
+          登出
+        </a>
+        <a class='dropdown-item'>Another action</a>
+        <a class='dropdown-item'>Something else here</a>
+        <a class='dropdown-item'>Something else here</a>
+      </div>
     </div>
   );
 };

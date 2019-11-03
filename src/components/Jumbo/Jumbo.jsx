@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 const Jumbo = () => {
   return (
-    <div>
+    <div style={{ position: "relative" }}>
       <div
         className='card card-image mb-4'
         style={{
@@ -13,11 +13,11 @@ const Jumbo = () => {
       >
         <div className='text-white text-center rgba-stylish-strong py-5 px-4'>
           <div className='py-5'>
-            <h5 className='h5 text-success'>
-              <i className='fas fa-camera-retro'></i> 绿柚社区
+            <h5 className='h5 text-warning'>
+              <i className='fas fa-camera-retro'></i> 青柠社区
             </h5>
             <h2 className='card-title h2 my-4 py-2'>
-              欢迎来到绿柚社区，与100,000+设计师分享
+              欢迎来到青柠社区，与100,000+设计师分享
             </h2>
             <p className='mb-4 pb-2 px-md-5 mx-md-5'>
               我们是一个新兴的平台,欢迎你的加入

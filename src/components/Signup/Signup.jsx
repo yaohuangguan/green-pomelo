@@ -1,12 +1,8 @@
 import React from "react";
-import Signin from "./Signin";
+import { Link } from "react-router-dom";
 import "./Signin.scss";
 const Signup = () => {
-  return (
-    <div className='sign-in-and-sign-up'>
-      <Signin></Signin>
-    </div>
-  );
+  return <div></div>;
 };
 
 export default Signup;

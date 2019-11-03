@@ -1,5 +1,4 @@
 body {
-  background-color: #fff;
   position: relative;
 }
 * {
@@ -8,4 +7,12 @@ body {
 .relative {
   position: relative;
   min-height: 100vh;
+  background-color: #fff;
+}
+.logo-a {
+  color: #ddd !important;
+}
+.logo-b {
+  color: #ddd !important;
+  text-align: center !important;
 }
