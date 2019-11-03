@@ -3,7 +3,6 @@ import FormInput from "./Form-input";
 import Button from "../Custom-button/Button";
 import { googleSignIn } from "../../firebase/firebase";
 import "./Signin.scss";
-import picture from "../../assets/Digitalarts.gif";
 class Signin extends React.Component {
   constructor(props) {
     super(props);
@@ -55,7 +54,11 @@ class Signin extends React.Component {
         <br />
         <div className='row flex'>
           <div className='start'>
-            <img src={picture} width='100%' alt='the' />
+            <img
+              src={"https://media.giphy.com/media/woIKv4f7TETgQ/giphy.gif"}
+              width='100%'
+              alt='the'
+            />
           </div>
           <div>
             <h2 className='h3-responsive text-center text-white my-4'>

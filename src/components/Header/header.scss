@@ -20,7 +20,16 @@ $color: #21d192;
     margin-left: auto;
     display: flex;
     .signup {
-      font-size: 0.9rem;
+      font-size: 1rem;
+      padding: 20px;
+      font-weight: 500;
+      color: #eb782e;
+      transition: all 400ms ease-out;
+      &:hover {
+        border: 1px solid orange;
+        background: orange;
+        color: #fff;
+      }
     }
     .option {
       padding: 20px;
@@ -28,7 +37,7 @@ $color: #21d192;
       font-weight: 400;
       cursor: pointer;
       color: #fff;
-      & :hover {
+      &:hover {
         color: #eb782e;
       }
     }
