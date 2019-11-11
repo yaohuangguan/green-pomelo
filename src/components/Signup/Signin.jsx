@@ -9,7 +9,7 @@ class Signin extends React.Component {
     this.state = {
       email: "",
       password: "",
-      send: true
+      send: false
     };
   }
   validEmail = () => {
@@ -19,8 +19,8 @@ class Signin extends React.Component {
   getEmail = e => {
     this.setState({ email: e.target.value }, () => {
       this.validEmail()
-        ? this.setState({ send: false })
-        : this.setState({ send: true });
+        ? this.setState({ send: true })
+        : this.setState({ send: false });
     });
   };
   handleSubmit = e => {
@@ -90,7 +90,7 @@ class Signin extends React.Component {
                   type='submit'
                   className='btn btn-success mr-4'
                   value='登录'
-                  disabled={this.state.send}
+                  disabled={!this.state.send}
                 />
                 <h6 className='hr'>或</h6>
                 <Button onClick={googleSignIn}>

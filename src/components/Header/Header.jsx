@@ -21,7 +21,7 @@ const Header = ({ currentUser }) => {
             <Link className='option' to='/signin'>
               登录
             </Link>
-            <Link to='/signup' className='signup rounded text-center'>
+            <Link to='/signup' className='signup'>
               注册
             </Link>
           </div>

@@ -23,12 +23,11 @@ const Dropdown = ({ currentUser, classname, history }) => {
       </button>
 
       <div class='dropdown-menu dropdown-primary'>
+        <a class='dropdown-item'>个人主页</a>
+        <a class='dropdown-item'>账户设置</a>
         <a class='dropdown-item' onClick={signOut}>
           登出
         </a>
-        <a class='dropdown-item'>Another action</a>
-        <a class='dropdown-item'>Something else here</a>
-        <a class='dropdown-item'>Something else here</a>
       </div>
     </div>
   );
