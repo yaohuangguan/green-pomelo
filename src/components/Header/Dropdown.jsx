@@ -10,24 +10,28 @@ const Dropdown = ({ currentUser, classname, history }) => {
     history.push("/");
   };
   return (
-    <div class='dropdown'>
+    <div className="dropdown">
       <button
-        class='btn btn-warning dropdown-toggle mr-4'
-        type='button'
-        id='dropdownMenu1'
-        data-toggle='dropdown'
-        aria-haspopup='true'
-        aria-expanded='false'
+        className="btn btn-warning dropdown-toggle mr-4"
+        type="button"
+        id="dropdownMenu1"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
       >
         {currentUser.displayName}
       </button>
 
-      <div class='dropdown-menu dropdown-primary'>
-        <a class='dropdown-item'>个人主页</a>
-        <a class='dropdown-item'>账户设置</a>
-        <a class='dropdown-item' onClick={signOut}>
+      <div className="dropdown-menu dropdown-primary">
+        <Link className="dropdown-item" to="/dashboard">
+          个人主页
+        </Link>
+        <Link className="dropdown-item" to="/settings">
+          账户设置
+        </Link>
+        <Link className="dropdown-item" onClick={signOut}>
           登出
-        </a>
+        </Link>
       </div>
     </div>
   );

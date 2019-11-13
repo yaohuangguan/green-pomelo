@@ -3,14 +3,14 @@ import "firebase/firestore";
 import "firebase/auth";
 
 const config = {
-  apiKey: "AIzaSyAeU46MJFkpxnW4nqNNUpFJDr3xvPBRoTI",
-  authDomain: "pro-db-b412c.firebaseapp.com",
-  databaseURL: "https://pro-db-b412c.firebaseio.com",
-  projectId: "pro-db-b412c",
-  storageBucket: "pro-db-b412c.appspot.com",
-  messagingSenderId: "34806085369",
-  appId: "1:34806085369:web:63bf0205fcaa17e74d1428",
-  measurementId: "G-VTS17DTNTF"
+  apiKey: "AIzaSyA8P4dzR1Is3uQgfIc7wQ0ngmBoQB11cCo",
+  authDomain: "green-pomelo.firebaseapp.com",
+  databaseURL: "https://green-pomelo.firebaseio.com",
+  projectId: "green-pomelo",
+  storageBucket: "green-pomelo.appspot.com",
+  messagingSenderId: "981916060073",
+  appId: "1:981916060073:web:9ef2ffc862ddecc1a39cb8",
+  measurementId: "G-S5BNXZ6HXZ"
 };
 
 firebase.initializeApp(config);

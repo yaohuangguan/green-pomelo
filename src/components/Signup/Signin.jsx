@@ -47,54 +47,54 @@ class Signin extends React.Component {
   }
   render() {
     return (
-      <div className='container'>
+      <div className="container">
         <br />
         <br />
         <br />
         <br />
-        <div className='row flex'>
-          <div className='start'>
+        <div className="row flex">
+          <div className="start">
             <img
               src={"https://media.giphy.com/media/woIKv4f7TETgQ/giphy.gif"}
-              width='100%'
-              alt='the'
+              width="100%"
+              alt="the"
             />
           </div>
           <div>
-            <h2 className='h3-responsive text-center text-white my-4'>
+            <h2 className="h3-responsive text-center text-white my-4">
               使用账号密码登录
             </h2>
 
             <form onSubmit={this.handleSubmit}>
               <FormInput
-                type='email'
-                name='email'
+                type="email"
+                name="email"
                 value={this.state.email}
-                id='email'
-                label='邮箱'
+                id="email"
+                label="邮箱"
                 handleChange={this.handleChange}
                 onChange={this.getEmail}
                 required
               />
               <FormInput
-                type='password'
-                name='password'
-                label='密码'
+                type="password"
+                name="password"
+                label="密码"
                 value={this.state.password}
                 handleChange={this.handleChange}
-                id='password'
+                id="password"
                 required
               />
-              <div className='text-center'>
+              <div className="text-center">
                 <input
-                  type='submit'
-                  className='btn btn-success mr-4'
-                  value='登录'
+                  type="submit"
+                  className="btn btn-warning mr-4"
+                  value="登录"
                   disabled={!this.state.send}
                 />
-                <h6 className='hr'>或</h6>
+                <h6 className="hr">或</h6>
                 <Button onClick={googleSignIn}>
-                  <i className='fab fa-google'></i> Google登录
+                  <i className="fab fa-google"></i> Google登录
                 </Button>
               </div>
             </form>
