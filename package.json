@@ -1,9 +1,11 @@
 {
   "name": "qingning",
-  "version": "1.0.0",
+  "version": "2.0.0",
+  "homepage": "https://yaohuangguan.github.io/",
   "private": true,
   "dependencies": {
     "firebase": "^7.2.2",
+    "gh-pages": "^2.1.1",
     "node-sass": "^4.12.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
@@ -14,7 +16,9 @@
     "dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
