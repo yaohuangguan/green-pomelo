@@ -1,0 +1,1 @@
+{"version":3,"sources":["Footer.scss"],"names":[],"mappings":"AAAA,OACE,iBAAkB,CAClB,QAAS,CACT,WAAY","file":"7.fc9c57b3.chunk.css","sourcesContent":["footer {\n  position: absolute;\n  bottom: 0;\n  width: 100vw;\n}\n"]}
