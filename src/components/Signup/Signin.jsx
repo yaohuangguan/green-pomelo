@@ -1,7 +1,7 @@
 import React from "react";
 import FormInput from "./Form-input";
 import Button from "../Custom-button/Button";
-import { googleSignIn } from "../../firebase/firebase";
+import { auth, googleSignIn } from "../../firebase/firebase";
 import "./Signin.scss";
 class Signin extends React.Component {
   constructor(props) {
@@ -9,7 +9,8 @@ class Signin extends React.Component {
     this.state = {
       email: "",
       password: "",
-      send: false
+      send: false,
+      errors: []
     };
   }
   validEmail = () => {
@@ -23,9 +24,36 @@ class Signin extends React.Component {
         : this.setState({ send: false });
     });
   };
-  handleSubmit = e => {
+  handleSubmit = async e => {
     e.preventDefault();
-    this.setState({ email: "", password: "" });
+    const { email, password } = this.state;
+    if (!email || !password) {
+      this.setState({ errors: "输入邮箱和密码" });
+      return;
+    }
+    try {
+      await auth.signInWithEmailAndPassword(email, password);
+      this.setState({
+        email: "",
+        password: ""
+      });
+      this.props.history.push("/");
+    } catch (error) {
+      console.log(error);
+      switch (error.code) {
+        case "auth/user-not-found":
+          this.setState({ errors: "用户名和密码不正确，请修改" });
+          break;
+        case "auth/wrong-password":
+          this.setState({ errors: "用户名和密码不正确，请修改" });
+          break;
+        case "auth/network-request-failed":
+          this.setState({ errors: "网络故障，请检查你的网络然后重试" });
+          break;
+        default:
+          break;
+      }
+    }
   };
   handleChange = e => {
     const { value, name } = e.target;
@@ -46,6 +74,7 @@ class Signin extends React.Component {
     console.log("changed away linear");
   }
   render() {
+    const { email, password, errors, send } = this.state;
     return (
       <div className="container">
         <br />
@@ -66,31 +95,30 @@ class Signin extends React.Component {
             </h2>
 
             <form onSubmit={this.handleSubmit}>
+              {errors ? <div className="text-danger">{errors}</div> : null}
               <FormInput
                 type="email"
                 name="email"
-                value={this.state.email}
+                value={email}
                 id="email"
                 label="邮箱"
                 handleChange={this.handleChange}
                 onChange={this.getEmail}
-                required
               />
               <FormInput
                 type="password"
                 name="password"
                 label="密码"
-                value={this.state.password}
+                value={password}
                 handleChange={this.handleChange}
                 id="password"
-                required
               />
               <div className="text-center">
                 <input
                   type="submit"
                   className="btn btn-warning mr-4"
                   value="登录"
-                  disabled={!this.state.send}
+                  disabled={!send}
                 />
                 <h6 className="hr">或</h6>
                 <Button onClick={googleSignIn}>

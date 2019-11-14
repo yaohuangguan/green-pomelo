@@ -29,7 +29,7 @@ const Dropdown = ({ currentUser, classname, history }) => {
         <Link className="dropdown-item" to="/settings">
           账户设置
         </Link>
-        <Link className="dropdown-item" onClick={signOut}>
+        <Link className="dropdown-item" to="/" onClick={signOut}>
           登出
         </Link>
       </div>
