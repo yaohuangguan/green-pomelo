@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Dropdown from "./Dropdown";
+import CartDropDown from "../Cart/CartDropDown/CartDropDown";
+import CartIcon from "../Cart/Carticon/CartIcon";
 import { connect } from "react-redux";
 import "./header.scss";
 
-const Header = ({ currentUser }) => {
+const Header = ({ currentUser, hidden }) => {
   return (
     <div className="header">
       <Link to="/" className="logo">
@@ -16,7 +18,10 @@ const Header = ({ currentUser }) => {
         </Link>
 
         {currentUser ? (
-          <Dropdown classname={"option"} currentUser={currentUser} />
+          <>
+            <CartIcon />
+            <Dropdown classname={"option"} currentUser={currentUser} />
+          </>
         ) : (
           <div className="options">
             <Link className="option" to="/signin">
@@ -29,10 +34,12 @@ const Header = ({ currentUser }) => {
           </div>
         )}
       </div>
+      {hidden ? null : <CartDropDown></CartDropDown>}
     </div>
   );
 };
-const mapStateToProps = state => ({
-  currentUser: state.user.currentUser
+const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
+  currentUser,
+  hidden
 });
 export default connect(mapStateToProps)(Header);
