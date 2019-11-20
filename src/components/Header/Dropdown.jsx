@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
-import { auth } from "../../firebase/firebase";
+import { auth } from "../../firebase/Firebase";
 import "./Dropdown.scss";
 
 const Dropdown = ({ currentUser, classname, history }) => {

@@ -1,6 +1,6 @@
 import React from "react";
 import SHOP_DATA from "./ShopData";
-import Collection from "../../components/CollectionPreview/CollectionPreview";
+import Collection from "../../components/CollectionList/CollectionList";
 import "./shop.scss";
 class Shop extends React.Component {
   constructor() {
@@ -21,7 +21,7 @@ class Shop extends React.Component {
   render() {
     const { collections } = this.state;
     return (
-      <div className='container'>
+      <div className="container">
         <br />
         <br />
         <br />

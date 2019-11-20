@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import FormInput from "./Form-input";
 import Button from "../Custom-button/Button";
-import { auth, googleSignIn } from "../../firebase/firebase";
+import { auth, googleSignIn } from "../../firebase/Firebase";
 import "./Signin.scss";
 class Signin extends React.Component {
   constructor(props) {
@@ -37,15 +38,14 @@ class Signin extends React.Component {
         email: "",
         password: ""
       });
-      this.props.history.push("/");
     } catch (error) {
       console.log(error);
       switch (error.code) {
         case "auth/user-not-found":
-          this.setState({ errors: "用户名和密码不正确，请修改" });
+          this.setState({ errors: "用户名或密码不正确，请修改" });
           break;
         case "auth/wrong-password":
-          this.setState({ errors: "用户名和密码不正确，请修改" });
+          this.setState({ errors: "用户名或密码不正确，请修改" });
           break;
         case "auth/network-request-failed":
           this.setState({ errors: "网络故障，请检查你的网络然后重试" });
@@ -125,6 +125,7 @@ class Signin extends React.Component {
                   <i className="fab fa-google"></i> Google登录
                 </Button>
               </div>
+              <Link to="/signup"> 我要注册账号</Link>
             </form>
           </div>
         </div>

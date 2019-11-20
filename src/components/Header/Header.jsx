@@ -1,27 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Dropdown from "./Dropdown";
+import { connect } from "react-redux";
 import "./header.scss";
 
 const Header = ({ currentUser }) => {
   return (
-    <div className='header'>
-      <Link to='/' className='logo'>
-        <span className='logoText'>青柠</span>
+    <div className="header">
+      <Link to="/" className="logo">
+        <span className="logoText">青柠</span>
       </Link>
-      <div className='options'>
-        <Link to='/shop' className='option'>
+      <div className="options">
+        <Link to="/shop" className="option">
           设计
         </Link>
 
         {currentUser ? (
           <Dropdown classname={"option"} currentUser={currentUser} />
         ) : (
-          <div className='options'>
-            <Link className='option' to='/signin'>
+          <div className="options">
+            <Link className="option" to="/signin">
               登录
             </Link>
-            <Link to='/signup' className='signup'>
+
+            <Link to="/signup" className="signup">
               注册
             </Link>
           </div>
@@ -30,5 +32,7 @@ const Header = ({ currentUser }) => {
     </div>
   );
 };
-
-export default Header;
+const mapStateToProps = state => ({
+  currentUser: state.user.currentUser
+});
+export default connect(mapStateToProps)(Header);

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import FormInput from "./Form-input";
-import { auth, createUser } from "../../firebase/firebase";
+import { auth, createUser } from "../../firebase/Firebase";
 import "./Signin.scss";
 class Signup extends React.Component {
   constructor(props) {
@@ -54,7 +54,6 @@ class Signup extends React.Component {
         passwordConf: "",
         errors: []
       });
-      this.props.history.push("/");
     } catch (error) {
       console.log(error);
       if (error.code === "auth/weak-password") {
@@ -165,6 +164,7 @@ class Signup extends React.Component {
                   disabled={!send}
                 />
               </div>
+              <Link to="/signin"> 我已有账号，请登录</Link>
             </form>
           </div>
         </div>

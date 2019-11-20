@@ -3,9 +3,9 @@ import Directory from "../components/Directory/Directory";
 import Jumbo from "../components/Jumbo/Jumbo";
 const Homepage = () => {
   return (
-    <div className='homepage'>
+    <div>
       <Jumbo></Jumbo>
-      <div className='container'>
+      <div className="container">
         <Directory></Directory>
       </div>
     </div>

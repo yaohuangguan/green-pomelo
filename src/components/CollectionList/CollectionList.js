@@ -1,12 +1,12 @@
 import React from "react";
 import Collection from "../Collection-item/Collection-item";
-import "./collection-preview.scss";
-const CollectionPreview = props => {
+import "./collection-list.scss";
+const CollectionList = props => {
   const { items, title } = props;
   return (
-    <div className='collection-preview'>
-      <h1 className='title'>{title}</h1>
-      <div className='preview'>
+    <div className="collection-preview">
+      <h1 className="title">{title}</h1>
+      <div className="preview">
         {items
           .filter((item, index) => index < 4)
           .map(({ id, ...otherProps }) => (
@@ -17,4 +17,4 @@ const CollectionPreview = props => {
   );
 };
 
-export default CollectionPreview;
+export default CollectionList;
