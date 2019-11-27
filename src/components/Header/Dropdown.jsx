@@ -12,7 +12,7 @@ const Dropdown = ({ currentUser, classname, history }) => {
   return (
     <div className="dropdown">
       <button
-        className=" dropdown-toggle py-3 aqua-gradient"
+        className=" dropdown-toggle btn btn-outline-white"
         type="button"
         id="dropdownMenu1"
         data-toggle="dropdown"
